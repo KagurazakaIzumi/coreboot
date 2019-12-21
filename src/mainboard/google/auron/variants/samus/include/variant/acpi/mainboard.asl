@@ -201,7 +201,7 @@ Scope (\_SB.PCI0.I2C1)
 
 		Method (_DSW, 3, NotSerialized)
 		{
-			Store (BOARD_CODEC_WAKE_GPIO, Local0)
+			Store (BOARD_TOUCHSCREEN_WAKE_GPIO, Local0)
 			If (LEqual (Arg0, 1)) {
 				// Enable GPIO as wake source
 				\_SB.PCI0.LPCB.GPIO.GWAK (Local0)
