@@ -470,6 +470,10 @@ void google_chromeec_events_init(const struct google_chromeec_event_info *info,
 		/* Disable SMI and wake events. */
 		google_chromeec_set_smi_mask(0);
 
+		/* Clear pending events. */
+		while (google_chromeec_get_event() != 0)
+			;
+
 		/* Restore SCI event mask. */
 		google_chromeec_set_sci_mask(info->sci_events);
 
